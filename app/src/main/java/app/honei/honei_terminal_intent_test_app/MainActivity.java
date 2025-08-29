@@ -154,7 +154,7 @@ public class MainActivity extends Activity implements TableCard.OnChargeClickLis
 
     private void handlePrintResult(int resultCode, Intent data) {
         boolean ok = (resultCode == RESULT_OK);
-        String status = data != null ? data.getStringExtra("status") : null;
+        String status = data != null ? data.getStringExtra("errorMessage") : null;
         String msg = ok ? "Ticket sent to printer" : "Could not print ticket";
         if (status != null) msg += "\nStatus: " + status;
 

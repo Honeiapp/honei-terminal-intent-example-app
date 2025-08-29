@@ -1,5 +1,6 @@
 package app.honei.honei_terminal_intent_test_app.utils;
 
+import app.honei.honei_terminal_intent_test_app.models.ModifierDef;
 import app.honei.honei_terminal_intent_test_app.models.TicketItem;
 
 import java.text.SimpleDateFormat;
@@ -45,7 +46,7 @@ public class TicketBuilder {
                     .append("\"modifierOptions\":[");
             
             for (int j = 0; j < ti.getModifiers().size(); j++) {
-                var md = ti.getModifiers().get(j);
+                ModifierDef md = ti.getModifiers().get(j);
                 sb.append("{\"name\":\"").append(md.getName()).append("\",")
                         .append("\"supl\":").append(MathUtils.format2(md.getSupplement())).append("}");
                 if (j < ti.getModifiers().size() - 1) sb.append(",");

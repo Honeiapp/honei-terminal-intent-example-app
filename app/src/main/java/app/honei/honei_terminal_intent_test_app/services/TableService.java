@@ -2,6 +2,7 @@ package app.honei.honei_terminal_intent_test_app.services;
 
 import app.honei.honei_terminal_intent_test_app.data.MenuData;
 import app.honei.honei_terminal_intent_test_app.models.MenuItemDef;
+import app.honei.honei_terminal_intent_test_app.models.ModifierDef;
 import app.honei.honei_terminal_intent_test_app.models.TicketItem;
 import app.honei.honei_terminal_intent_test_app.utils.MathUtils;
 
@@ -41,9 +42,9 @@ public class TableService {
                 if (chosen.getPossibleModifiers() != null && chosen.getPossibleModifiers().length > 0) {
                     int modsToAdd = rnd.nextInt(3);
                     for (int m = 0; m < modsToAdd; m++) {
-                        var mod = chosen.getPossibleModifiers()[rnd.nextInt(chosen.getPossibleModifiers().length)];
+                        ModifierDef mod = chosen.getPossibleModifiers()[rnd.nextInt(chosen.getPossibleModifiers().length)];
                         boolean exists = false;
-                        for (var md : ti.getModifiers()) {
+                        for (ModifierDef md : ti.getModifiers()) {
                             if (md.getName().equals(mod.getName())) {
                                 exists = true;
                                 break;
@@ -54,7 +55,7 @@ public class TableService {
                 }
 
                 double modsSum = 0.0;
-                for (var md : ti.getModifiers()) modsSum += md.getSupplement();
+                for (ModifierDef md : ti.getModifiers()) modsSum += md.getSupplement();
 
                 ti.setPrice(MathUtils.round2(ti.getUnits() * (ti.getUnitPrice() + modsSum)));
                 items.add(ti);
