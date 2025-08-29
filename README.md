@@ -83,7 +83,7 @@ The payment result includes:
 - `status`: "completed" for successful payments
 - `amount`: The charged amount
 - `tip`: Tip amount (if any)
-- `payment_id`: Unique payment identifier
+- `paymentId`: Unique payment identifier
 
 ### Print Intent
 

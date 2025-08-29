@@ -136,7 +136,7 @@ public class MainActivity extends Activity implements TableCard.OnChargeClickLis
         String status = data.getStringExtra("status");
         double amount = data.getDoubleExtra("amount", 0.0);
         double tip = data.getDoubleExtra("tip", 0.0);
-        String paymentId = data.getStringExtra("payment_id");
+        String paymentId = data.getStringExtra("paymentId");
 
         boolean ok = (resultCode == RESULT_OK) && "completed".equalsIgnoreCase(status);
 
